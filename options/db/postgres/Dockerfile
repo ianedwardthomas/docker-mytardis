@@ -20,7 +20,7 @@ apt-get -y install git ipython libldap2-dev libsasl2-dev \
 RUN groupadd -r nginx && adduser --home /opt/mytardis --disabled-password --ingroup nginx --gecos '' mytardis
 USER mytardis
 ENV MYTARDIS_URL https://github.com/mytardis/mytardis.git
-ENV MYTARDIS_BRANCH 3.7
+ENV MYTARDIS_BRANCH 3.7.8
 
 RUN cd /opt/mytardis &&  git clone -b ${MYTARDIS_BRANCH} ${MYTARDIS_URL} webapp \
     && cd /opt/mytardis/webapp #
