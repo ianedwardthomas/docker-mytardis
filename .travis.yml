@@ -48,7 +48,7 @@ script:
       - docker ps
       - docker-compose -f smoketest.yml build
       - docker-compose -f smoketest.yml run test
-      - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - VERSION=`cat version.txt`
       - if [ "$VERSION" == ""  ]; then VERSION=latest; fi
       - MYTARDIS_IMG_REPO=$DOCKER_USERNAME/mytardis-app-"$LOCAL_TAG":"$VERSION"-travis
