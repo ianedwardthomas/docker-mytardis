@@ -37,8 +37,8 @@ WORKDIR /opt/mytardis/webapp
 
 RUN /usr/bin/pip install -U pip
 
-#Remove following line when 3.7  branch is updated
-#ADD requirements.txt /opt/mytardis/webapp/requirements.txt
+#Update this when 3.7  branch is updated
+ADD requirements.txt /opt/mytardis/webapp/requirements.txt
 
 RUN /usr/bin/pip install dumb-init==1.0.0
 
